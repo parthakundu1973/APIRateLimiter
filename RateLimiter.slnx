@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="APIRateLimiterTests/APIRateLimiterTests.csproj" />
+  <Project Path="RateLimiter/APIRateLimiter.csproj" />
+</Solution>

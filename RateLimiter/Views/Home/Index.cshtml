@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "API Rate Limiter";
+}
+
+<div class="container">
+    <h1>API Rate Limiter</h1>
+
+    <div class="controls">
+        <div>
+            <label for="apiKey">API Key</label>
+            <input id="apiKey" type="text" value="client_a" />
+        </div>
+
+        <div>
+            <label for="burstCount">Burst count</label>
+            <input id="burstCount" type="number" value="10" min="1" />
+        </div>
+
+        <div class="buttons">
+            <button id="sendButton">Send Request</button>
+            <button id="burstButton">Send Burst</button>
+        </div>
+    </div>
+
+    <section>
+        <h2>Current limit</h2>
+
+        <p id="limitInfo">
+            Enter an API key to see its limit.
+        </p>
+
+        <p>
+            Allowed: <strong id="allowedCount">0</strong>
+        </p>
+
+        <p>
+            Rate limited: <strong id="limitedCount">0</strong>
+        </p>
+    </section>
+
+    <section>
+        <h2>Request history</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+
+            <tbody id="history"></tbody>
+        </table>
+    </section>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
